@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.MainPage"
+             >
+    <NavigationPage.TitleView>
+        <Label Text="Cash Register App" HorizontalOptions="Center" FontSize="Title"  TextColor="Black"/>
+    </NavigationPage.TitleView>
+ 
+    
+    <RelativeLayout BackgroundColor="Transparent" Margin="20">
+
+
+        <StackLayout Orientation="Horizontal"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.99}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.02}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0}">
+            <Label x:Name="Type" Text="Type" HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center" FontSize="Large" TextColor="Black"></Label>
+            <Button Text="Manager" CornerRadius="10" HorizontalOptions="EndAndExpand" BackgroundColor="Red" Clicked="Manager" WidthRequest="150"></Button>
+        </StackLayout>
+        <Grid RowSpacing="0" ColumnSpacing="0"
+              RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.40}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.99}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.13}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0}">
+            <Button Clicked="Button_Clicked" Grid.Row="0" Grid.Column="0" Text="1" BackgroundColor="Transparent" FontSize="Large"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="0" Grid.Column="1" Text="2" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="0" Grid.Column="2" Text="3" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="1" Grid.Column="0" Text="4" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="1" Grid.Column="1" Text="5" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="1" Grid.Column="2" Text="6" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="2" Grid.Column="0" Text="7" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="2" Grid.Column="1" Text="8" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="2" Grid.Column="2" Text="9" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Button Clicked="Button_Clicked" Grid.Row="3" Grid.Column="1" Text="0" FontSize="Large" BackgroundColor="Transparent"></Button>
+            <Label x:Name="total" Grid.Row="0" Grid.Column="3" FontSize="Medium"  Text="Total"></Label>
+
+            <Button Clicked="Buy_Button"
+                Grid.RowSpan="2"
+                Grid.Row="1"
+                Grid.Column="3" 
+                    CornerRadius="10" 
+                BackgroundColor="Blue" 
+                TextColor="Black"
+                    FontSize="Large"
+                Text="Buy">
+            </Button>
+
+
+
+        </Grid>
+        
+        <StackLayout Orientation="Vertical"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.4}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.99}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.6}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0}">
+
+            <Label x:Name="Quantity" Text="Quantity" TextColor="Black" FontSize="Large"></Label>
+
+            <ListView x:Name="listSource"
+                  ItemSelected="ItemChoose"                                 
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Qty}"
+                                     HorizontalOptions="EndAndExpand" />
+
+                                </StackLayout>
+                                <Label Text="{Binding Price}"
+                                     VerticalOptions="EndAndExpand"
+                                     TextColor="Red" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </RelativeLayout>
+
+</ContentPage>

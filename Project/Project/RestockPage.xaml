@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.RestockPage">
+    <NavigationPage.TitleView>
+        <Label Text="Restock Page" HorizontalOptions="Center" FontSize="Title"  TextColor="Black"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <RelativeLayout>
+
+            <StackLayout Orientation="Vertical"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.9}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.9}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.1}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.1, Constant=-20}">
+                
+                <Entry x:Name="newQty" Placeholder="Enter New Quantity"></Entry>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Restock" Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Blue"></Button>
+                    <Button Text="Cancel" Clicked="cancel" BackgroundColor="Transparent" TextColor="Blue"></Button>
+                </StackLayout>
+                <ListView x:Name="restockSource"
+                      ItemSelected="ItemChoose"                    
+                      >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Qty}"
+                                     HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

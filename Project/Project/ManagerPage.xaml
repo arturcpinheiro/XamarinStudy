@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.ManagerPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.BackButtonTitle="Cancel">
+    <NavigationPage.TitleView>
+        <Label Text="Manager Page" HorizontalOptions="Center" FontSize="Title"  TextColor="Black"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        
+        <RelativeLayout BackgroundColor="Beige">
+            
+            <StackLayout 
+                         RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.2}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.3}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-70}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-70}">  
+                
+                <Grid >                
+                    <Button Grid.Row="0" Text="History" Clicked="Button_Clicked"></Button>
+
+                    <Button Grid.Row="1" Text="Restock" Clicked="Button_Clicked_1"></Button>
+
+                    <Button Grid.Row="2" Text="Add Item" Clicked="Button_Clicked_2"></Button>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

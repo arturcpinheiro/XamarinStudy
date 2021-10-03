@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.ItemPage"
+              NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <RelativeLayout>
+            
+        <StackLayout Orientation="Vertical"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.2}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.3}"
+                         RelativeLayout.YConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Height, Factor=0.5, Constant=-70}"
+                         RelativeLayout.XConstraint="{ConstraintExpression 
+                Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-70}">
+            <Label x:Name="itemName"></Label>
+            <Label x:Name="itemCount"></Label>
+            <Label x:Name="itemDate"></Label>
+            <Label x:Name="itemTotal"></Label>
+
+        </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
